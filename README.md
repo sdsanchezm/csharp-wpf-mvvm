@@ -4,7 +4,7 @@ tracking code related to wpf using (when possible) mvvm design pattern
 
 ## General 
 
-~~~mermaid
+```mermaid
 flowchart LR
     ViewX["View"]:::bg1
     ViewModelX["ViewModel"]:::bg2
@@ -18,7 +18,7 @@ flowchart LR
     classDef bg1 fill:purple, font-size:22pt, color:#FFF;
     classDef bg2 fill:green, font-size:22pt, color:#FFF;
     classDef bg3 fill:orange, font-size:22pt, color:#FFF;
-~~~
+```
 
 ## MISC Resources
 
