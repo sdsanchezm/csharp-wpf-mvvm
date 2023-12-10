@@ -6,14 +6,13 @@ tracking code related to wpf using (when possible) mvvm design pattern
 
 ~~~mermaid
 flowchart LR
-    ViewX["View"]
-    ViewModelX["ViewModel"]
-    ModelX["Model class
-    and business logic"]
-    ViewX --Command Bindings--> ViewModelX
-    ViewModelX -- Data Bindings --> ViewX
-    ViewModelX --Methods (Retrieve and Update)--> ModelX
-    ModelX --Properties--> ViewModelX
+    View
+    ViewModel
+    ModelX["Model class and business logic"]
+    View --Command Bindings--> ViewModel
+    ViewModel --Data Bindings--> View
+    ViewModel --Methods Retrieve And Update--> ModelX
+    ModelX --Properties--> ViewModel
 ~~~
 
 ## MISC Resources
