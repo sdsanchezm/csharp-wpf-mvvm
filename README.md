@@ -4,7 +4,7 @@ tracking code related to wpf using (when possible) mvvm design pattern
 
 ## General 
 
-```mermaid
+~~~mermaid
 flowchart LR
     ViewX["View"]
     ViewModelX["ViewModel"]
@@ -14,7 +14,7 @@ flowchart LR
     ViewModelX -- Data Bindings --> ViewX
     ViewModelX --Methods (Retrieve and Update)--> ModelX
     ModelX --Properties--> ViewModelX
-```
+~~~
 
 ## MISC Resources
 
