@@ -6,18 +6,14 @@ tracking code related to wpf using (when possible) mvvm design pattern
 
 ```mermaid
 flowchart LR
-    ViewX["View"]:::bg1
-    ViewModelX["ViewModel"]:::bg2
+    ViewX["View"]
+    ViewModelX["ViewModel"]
     ModelX["Model class
-    and business logic"]:::bg3
+    and business logic"]
     ViewX --Command Bindings--> ViewModelX
     ViewModelX -- Data Bindings --> ViewX
     ViewModelX --Methods (Retrieve and Update)--> ModelX
     ModelX --Properties--> ViewModelX
-    classDef fs1 font-size:12pt;
-    classDef bg1 fill:purple, font-size:22pt, color:#FFF;
-    classDef bg2 fill:green, font-size:22pt, color:#FFF;
-    classDef bg3 fill:orange, font-size:22pt, color:#FFF;
 ```
 
 ## MISC Resources
