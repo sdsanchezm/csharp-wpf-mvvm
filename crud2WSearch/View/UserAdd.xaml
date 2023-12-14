@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:crud2WSearch.View"
         mc:Ignorable="d"
-        Title="UserAdd" Height="100" Width="200">
+        Title="UserAdd" Height="130" Width="280">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>

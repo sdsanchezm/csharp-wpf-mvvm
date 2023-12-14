@@ -19,7 +19,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <TextBox Text="asd" Width="100" Height="20" Grid.Column="0" Margin="10"/>
-                <Button Content="button" Height="20" Width="100" Grid.Column="1" Margin="10" Command="{Binding ShowAddUserWindowCommand}"/>
+                <Button Content="add user" Height="20" Width="100" Grid.Column="1" Margin="10" Command="{Binding ShowAddUserWindowCommand}"/>
             </Grid>
         </StackPanel>
 
