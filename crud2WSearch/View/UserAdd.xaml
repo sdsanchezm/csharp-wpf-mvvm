@@ -20,16 +20,16 @@
             <TextBlock Text="Username"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="0">
-            <TextBox></TextBox>
+            <TextBox Text="{Binding Username}"></TextBox>
         </StackPanel>
         <StackPanel Grid.Column="0" Grid.Row="1">
             <TextBlock Text="Usernumber"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <TextBox></TextBox>
+            <TextBox Text="{Binding Usernumber}"></TextBox>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="2">
-            <Button Content="Save" />
+            <Button Content="Save" Command="{Binding AddUserCommand}" />
         </StackPanel>
     </Grid>
 </Window>

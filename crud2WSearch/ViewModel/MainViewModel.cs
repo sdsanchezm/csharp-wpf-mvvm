@@ -42,5 +42,10 @@ namespace crud2WSearch.ViewModel
             // show window
             userAddWindow.Show();
         }
+
+        static void CloseW(object obj)
+        {
+            var mainWindow = obj as Window;
+        }
     }
 }

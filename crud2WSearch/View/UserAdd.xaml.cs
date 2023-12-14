@@ -1,4 +1,5 @@
-﻿using System;
+﻿using crud2WSearch.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace crud2WSearch.View
         public UserAdd()
         {
             InitializeComponent();
+            UserAddViewModel viewModel = new UserAddViewModel();
+            this.DataContext = viewModel;
         }
     }
 }

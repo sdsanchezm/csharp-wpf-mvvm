@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace crud2WSearch.ViewModel
@@ -17,7 +18,7 @@ namespace crud2WSearch.ViewModel
 
         public UserAddViewModel()
         {
-            AddUserCommand = new PopupCommand(AddUser);
+            AddUserCommand = new PopupCommand(AddUser, CanUserAdd);
         }
 
         private bool CanUserAdd(object obj)

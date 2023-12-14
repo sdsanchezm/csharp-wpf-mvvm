@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace crud2WSearch.Commands
 {
-    internal class PopupCommand : ICommand
+    public class PopupCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
 
