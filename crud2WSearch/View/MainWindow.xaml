@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:crud2WSearch"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Name="mainwindow"
+        Name="mainwindow1"
         >
     <Grid Background="Beige">
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <TextBox Name="filter2" TextChanged="filter2_TextChanged" Width="100" Height="20" Grid.Column="0" Margin="10"  />
-                <Button Content="add user" Height="20" Width="100" Grid.Column="1" Margin="10" Command="{Binding ShowAddUserWindowCommand}"/>
+                <Button CommandParameter="{x:Reference Name= mainwindow1}" Command="{Binding ShowAddUserWindowCommand}" Content="add user" Height="20" Width="100" Grid.Column="1" Margin="10" />
             </Grid>
         </StackPanel>
 
