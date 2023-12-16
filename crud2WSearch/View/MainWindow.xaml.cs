@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using crud2WSearch.Models;
 using crud2WSearch.ViewModel;
 
 namespace crud2WSearch.View
@@ -29,5 +30,31 @@ namespace crud2WSearch.View
         }
 
 
+        // filter 2
+        private void filter2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListOfUsers.Items.Filter = FilterMethod_filter2;
+            //var user1 = new User() { Username = "sumadre", Usernumber = "567" };
+            //ListOfUsers?.Items.Clear();
+            //Console.WriteLine("asd");
+        }
+
+        private bool FilterMethod_filter2(object obj)
+        {
+            var user = (User)obj;
+            return user.Username.Contains(filter2.Text, StringComparison.OrdinalIgnoreCase);
+        }
+
+        // filter1
+        private bool FilterMethod_filter1(object obj)
+        {
+            var user = (User)obj;
+            return user.Username.Contains(filter1.Text, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void filter1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ListOfUsers.Items.Filter = FilterMethod_filter1;
+        }
     }
 }

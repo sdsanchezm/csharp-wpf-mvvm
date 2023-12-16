@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace crud2WSearch.Models
 {
-    internal class UserManagement
+    public class UserManagement
     {
         public static ObservableCollection<User> _DatabaseUsers = new ObservableCollection<User>() { new User() { Usernumber = "123", Username= "TicheSanc" }, new User { Usernumber = "234", Username= "JamechoSanc" } };
 
