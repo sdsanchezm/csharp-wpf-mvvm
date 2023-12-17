@@ -37,5 +37,11 @@ namespace UserControl1
             LabelViewModel model1 = new LabelViewModel();
             DataContext = model1;
         }
+
+        private void bt3_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridViewModel model1 = new DataGridViewModel();
+            DataContext = model1;
+        }
     }
 }

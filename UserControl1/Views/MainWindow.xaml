@@ -31,7 +31,7 @@
         </Canvas>
         <Button Name="bt1" Content="Button1" Grid.Row="1" Height="NaN" Width="NaN" Background="#05445E" FontSize="12" Foreground="#D4F1F4" Click="bt1_Click" />
         <Button x:Name="bt2" Content="Button2" Grid.Row="2" Height="NaN" Width="NaN" Background="#189AB4" FontSize="12" Foreground="#75E6DA" Click="bt2_Click" />
-        <Button Content="Button" Grid.Row="3" Height="NaN" Width="NaN"/>
+        <Button x:Name="bt3" Content="Button" Grid.Row="3" Height="NaN" Width="NaN" Click="bt3_Click"/>
         <Button Content="Button" Grid.Row="4" Height="NaN" Width="NaN"/>
         <Button Content="Button" Grid.Row="5" Height="NaN" Width="NaN"/>
         <Button Content="Button" Grid.Row="6" Height="NaN" Width="NaN"/>
@@ -49,6 +49,12 @@
             <views:LabelUserControl>
 
             </views:LabelUserControl>
+        </DataTemplate>
+
+        <DataTemplate x:Name="DataGridTemplate" DataType="{x:Type viewmodels:DataGridViewModel}" >
+            <views:DataGridUserControl>
+
+            </views:DataGridUserControl>
         </DataTemplate>
 
 
