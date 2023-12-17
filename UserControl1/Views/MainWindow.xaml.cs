@@ -43,5 +43,11 @@ namespace UserControl1
             DataGridViewModel model1 = new DataGridViewModel();
             DataContext = model1;
         }
+
+        private void bt4_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanelViewModel model1 = new StackPanelViewModel();
+            DataContext = model1;
+        }
     }
 }
