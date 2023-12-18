@@ -1,4 +1,5 @@
 ﻿using PersonelTrackingProject.DB;
+using PersonelTrackingProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,12 @@ namespace PersonelTrackingProject
             {
 
             }
+        }
+
+        private void btnDepartment_Click(object sender, RoutedEventArgs e)
+        {
+            lblWindowName.Content = "Department List";
+            DataContext = new DepartmentViewModel();
         }
     }
 }

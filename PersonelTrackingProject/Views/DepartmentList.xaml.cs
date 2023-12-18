@@ -12,17 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PersonelTrackingProject.DB;
 
 namespace PersonelTrackingProject.Views
 {
-    /// <summary>
-    /// Interaction logic for DepartmentList.xaml
-    /// </summary>
     public partial class DepartmentList : UserControl
     {
         public DepartmentList()
         {
             InitializeComponent();
+            using(PersoneltrackingContext db = new PersoneltrackingContext())
+            {
+                List<Department> departmentList = db.Departments.ToList();
+                gridDepartment.ItemsSource = departmentList;
+            }
         }
     }
 }
