@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonelTrackingProject"
+        xmlns:views="clr-namespace:PersonelTrackingProject.Views"
+        xmlns:viewmodels="clr-namespace:PersonelTrackingProject.ViewModels"
         mc:Ignorable="d"
         Title="Personel Tracking App" Height="590" Width="900" Loaded="Window_Loaded"
-        Name="PersonelTrackingApp" Background="Beige" Icon="/img1.png" FontSize="14" FontWeight="Normal" WindowStartupLocation="CenterScreen"
+        Name="PersonelTrackingApp" Background="Beige" Icon="/img1.png" FontSize="14" FontWeight="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,7 +27,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Image Source="/img1.png" Margin="0,10,0,10" />
-        <ContentControl Content="" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto" />
+        <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto" />
         <Label x:Name="lblWindowName" Content="WindowName" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" />
 
         <StackPanel Grid.Row="1" Margin="0,2,0,0" Background="black" >

@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PersonelTracker.Models\PersonelTracker.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="img1.png" />
   </ItemGroup>
 
