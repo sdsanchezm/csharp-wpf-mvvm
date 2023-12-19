@@ -23,8 +23,19 @@ namespace PersonelTrackingProject.Views
             InitializeComponent();
             using(PersoneltrackingContext db = new PersoneltrackingContext())
             {
-                List<Department> departmentList = db.Departments.ToList();
+                List<Department> departmentList = db.Departments.OrderBy(d => d.DepartmentName).ToList();
                 gridDepartment.ItemsSource = departmentList;
+            }
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            DepartmentAddView departmentWindow = new DepartmentAddView();
+            departmentWindow.ShowDialog();
+            using (PersoneltrackingContext db = new PersoneltrackingContext())
+            {
+                List<Department> departmentsList = db.Departments.OrderBy(d => d.DepartmentName).ToList();
+                gridDepartment.ItemsSource = departmentsList;
             }
         }
     }
