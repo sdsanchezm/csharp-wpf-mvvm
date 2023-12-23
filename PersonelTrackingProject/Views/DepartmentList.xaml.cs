@@ -38,5 +38,18 @@ namespace PersonelTrackingProject.Views
                 gridDepartment.ItemsSource = departmentsList;
             }
         }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Department departmentSelected = (Department)gridDepartment.SelectedItem;
+            DepartmentUpdateView departmentUpdateView = new DepartmentUpdateView();
+            departmentUpdateView.departmentOrigin = departmentSelected;
+            departmentUpdateView.ShowDialog();
+            using (PersoneltrackingContext db = new PersoneltrackingContext())
+            {
+                List<Department> departmentsList = db.Departments.OrderBy(d => d.DepartmentName).ToList();
+                gridDepartment.ItemsSource = departmentsList;
+            }
+        }
     }
 }

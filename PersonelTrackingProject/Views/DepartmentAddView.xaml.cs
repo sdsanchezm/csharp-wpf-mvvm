@@ -34,7 +34,7 @@ namespace PersonelTrackingProject.Views
         {
             if (txtDepartmentName.Text.Trim().Length == 0) 
             {
-                MessageBox.Show("no empty fields");
+                MessageBox.Show("No empty fields allowed.");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace PersonelTrackingProject.Views
                     db.Add(department);
                     db.SaveChanges();
                     txtDepartmentName.Clear();
-                    MessageBox.Show("dept was added");
+                    MessageBox.Show("New Department was added.");
                 }
             }
         }

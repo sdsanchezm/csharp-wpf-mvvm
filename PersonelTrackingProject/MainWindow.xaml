@@ -8,7 +8,7 @@
         xmlns:viewmodels="clr-namespace:PersonelTrackingProject.ViewModels"
         mc:Ignorable="d"
         Title="Personel Tracking App" Height="590" Width="900" Loaded="Window_Loaded"
-        Name="PersonelTrackingApp" Background="Beige" Icon="/img1.png" FontSize="14" FontWeight="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Name="PersonelTrackingApp" Background="WhiteSmoke" Icon="/img1.png" FontSize="14" FontWeight="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         >
     <Grid>
         <Grid.ColumnDefinitions>
