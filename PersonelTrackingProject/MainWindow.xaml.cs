@@ -44,6 +44,5 @@ namespace PersonelTrackingProject
             lblWindowName.Content = "Employee List";
             DataContext = new EmployeeViewModel();
         }
-
     }
 }

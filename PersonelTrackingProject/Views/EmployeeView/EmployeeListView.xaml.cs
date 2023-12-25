@@ -24,5 +24,12 @@ namespace PersonelTrackingProject.Views.EmployeeView
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeePage windowNewEmployee = new EmployeePage();
+            windowNewEmployee.Show();
+
+        }
     }
 }

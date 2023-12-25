@@ -33,7 +33,7 @@
         <Label x:Name="lblWindowName" Content="WindowName" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" />
 
         <StackPanel Grid.Row="1" Margin="0,2,0,0" Background="black" >
-            <Button Name="btnEmployee" Height="60" Width="auto" HorizontalAlignment="Left" >
+            <Button Name="btnEmployee" Height="60" Width="auto" HorizontalAlignment="Left" Click="btnEmployee_Click" >
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
