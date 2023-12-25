@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:PersonelTrackingProject"
         xmlns:views="clr-namespace:PersonelTrackingProject.Views"
         xmlns:viewmodels="clr-namespace:PersonelTrackingProject.ViewModels"
+        xmlns:viewsposition="clr-namespace:PersonelTrackingProject.Views.PositionView"
+        xmlns:viewsemployee="clr-namespace:PersonelTrackingProject.Views.EmployeeView"
         mc:Ignorable="d"
-        Title="Personel Tracking App" Height="590" Width="900" Loaded="Window_Loaded"
+        Title="Personel Tracking App" Height="590" Width="900"
         Name="PersonelTrackingApp" Background="WhiteSmoke" Icon="/img1.png" FontSize="14" FontWeight="Normal" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         >
     <Grid>
@@ -27,7 +29,7 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Image Source="/img1.png" Margin="0,10,0,10" />
-        <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto" />
+        <ContentControl Content="{Binding}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="8" Height="Auto" Width="Auto" Margin="10,10,10,10" />
         <Label x:Name="lblWindowName" Content="WindowName" Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" />
 
         <StackPanel Grid.Row="1" Margin="0,2,0,0" Background="black" >
@@ -96,7 +98,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="6" Margin="0,2,0,0" Background="black" >
-            <Button Name="btnPosition" Height="60" Width="auto" HorizontalAlignment="Left" >
+            <Button Name="btnPosition" Height="60" Width="auto" HorizontalAlignment="Left" Click="btnPosition_Click" >
                 <Grid Width="150">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
@@ -140,5 +142,19 @@
                 
             </views:DepartmentList>
         </DataTemplate>
+
+        <DataTemplate x:Name="PositionTemplate" DataType="{x:Type viewmodels:PositionViewModel}" >
+            <viewsposition:PositionList>
+
+            </viewsposition:PositionList>
+        </DataTemplate>
+
+        <DataTemplate x:Name="EmployeeTemplate" DataType="{x:Type viewmodels:EmployeeViewModel}" >
+            <viewsemployee:EmployeeListView>
+
+            </viewsemployee:EmployeeListView>
+        </DataTemplate>
+
+
     </Window.Resources>
 </Window>
