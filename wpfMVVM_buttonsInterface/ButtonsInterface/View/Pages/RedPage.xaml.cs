@@ -12,24 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ButtonsInterface.ViewModel;
 
-namespace ButtonsInterface
+namespace ButtonsInterface.View.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RedPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RedPage : UserControl
     {
-        public MainWindow()
+        public RedPage()
         {
             InitializeComponent();
-            DataContext = new NavigationViewModel();
-        }
-
-        private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
     }
 }

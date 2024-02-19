@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ButtonsInterface"
+        xmlns:pages="clr-namespace:ButtonsInterface.View.Pages"
+        xmlns:vmodel1="clr-namespace:ButtonsInterface.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="820">
 
@@ -25,6 +27,15 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <DataTemplate x:Key="p1">
+                <pages:BluePage />
+            </DataTemplate>
+            <DataTemplate x:Key="p2">
+                <pages:RedPage />
+            </DataTemplate>
+            <DataTemplate x:Key="p3">
+                <pages:GreenPage />
+            </DataTemplate>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -37,6 +48,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
 
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
@@ -56,53 +68,43 @@
             </MenuItem>
         </Menu>
 
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
+            <StackPanel Orientation="Vertical" Margin="0,0,0,0" Background="Azure" Height="auto">
+                <Button Height="40" Width="120" Content="Blue" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="Black" Background="#0090FF" CommandParameter="{x:Static vmodel1:PageId.BluePage}"/>
+                <Button Height="40" Width="120" Content="Red" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="black" Background="#FF4444" CommandParameter="{x:Static vmodel1:PageId.RegPage}"/>
+                <Button Height="40" Width="120" Content="Green" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="Black" Background="#77AA77" CommandParameter="{x:Static vmodel1:PageId.GreenPage}"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10" Grid.Row="1">
-            <Button Height="40" Width="120" Content="Add" Margin="5" HorizontalAlignment="Right" Command="{Binding UserAddCommand}" Foreground="White" Background="#FF0090FF"/>
-            <Button Height="40" Width="120" Content="+3" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Red" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+4" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Red" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+5" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Red" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+6" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Red" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+10" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Red" Foreground="WhiteSmoke"/>
-        </StackPanel>
+            <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding}" Background="Beige" Width="660" Margin="10">
+                <ContentControl.Style>
+                    <Style TargetType="{x:Type ContentControl}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding PageID, NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}" Value="{x:Static vmodel1:PageId.BluePage}">
+                                <Setter Property="ContentTemplate" Value="{StaticResource p1}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding PageID, NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}" Value="{x:Static vmodel1:PageId.RegPage}">
+                                <Setter Property="ContentTemplate" Value="{StaticResource p2}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding PageID, NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}" Value="{x:Static vmodel1:PageId.GreenPage}">
+                                <Setter Property="ContentTemplate" Value="{StaticResource p3}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10" Grid.Row="2">
-            <Button Height="40" Width="120" Content="Add" Margin="5" HorizontalAlignment="Right" Command="{Binding UserAddCommand}" Foreground="White" Background="#FF0090FF"/>
-            <Button Height="40" Width="120" Content="+3" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Green" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+4" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Green" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+5" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Green" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+6" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Green" Foreground="WhiteSmoke"/>
-            <Button Height="40" Width="120" Content="+10" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Green" Foreground="WhiteSmoke"/>
-        </StackPanel>
+        </Grid>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,10,10,10" Grid.Row="3">
-            <Button Height="40" Width="120" Content="Add" Margin="5" HorizontalAlignment="Right" Command="{Binding UserAddCommand}" Foreground="White" Background="#FF0090FF"/>
-            <Button Height="40" Width="120" Content="+3" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Yellow" Foreground="Black"/>
-            <Button Height="40" Width="120" Content="+4" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Yellow" Foreground="Black"/>
-            <Button Height="40" Width="120" Content="+5" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Yellow" Foreground="Black"/>
-            <Button Height="40" Width="120" Content="+6" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Yellow" Foreground="Black"/>
-            <Button Height="40" Width="120" Content="+10" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="Yellow" Foreground="Black"/>
-        </StackPanel>
 
         <StackPanel Margin="10,10,10,10" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="5">
-            <Label Content="asd" FontSize="30" Background="Purple" Foreground="WhiteSmoke" Margin="4" Padding="30" Width="200"></Label>
+            <Label Content="{Binding Text1}" FontSize="20" Background="Purple" Foreground="WhiteSmoke" Margin="4" Padding="30" Width="300"></Label>
         </StackPanel>
 
-        <ListView x:Name="lstView" Grid.Row="4" Background="#EEE" ItemsSource="{Binding Users}" SelectionMode="Single">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <TextBlock Text="{Binding Username}"/>
-                        <TextBlock Text=" | " Foreground="Black"/>
-                        <TextBlock Text="{Binding Usernumber}"/>
-                        <TextBlock Text=" | " Foreground="Black"/>
-                        <TextBlock Text="{Binding Level}"/>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        
         
     </Grid>
 
