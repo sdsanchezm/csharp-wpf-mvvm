@@ -22,17 +22,41 @@ namespace UiTesting1
             //desktopSession.FindElementByName("+3").Click();
 
             // AutomationId from the inspector
-            desktopSession.FindElementByAccessibilityId("ButtonRedSection").Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            desktopSession.FindElementByAccessibilityId("ButtonGreenSection").Click();
-            Thread.Sleep(TimeSpan.FromSeconds(1));
-            desktopSession.FindElementByAccessibilityId("ButtonBlueSection").Click();
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+            //desktopSession.FindElementByAccessibilityId("ButtonRedSection").Click();
+            //Thread.Sleep(TimeSpan.FromSeconds(1));
+            //desktopSession.FindElementByAccessibilityId("ButtonGreenSection").Click();
+            //Thread.Sleep(TimeSpan.FromSeconds(1));
+            //desktopSession.FindElementByAccessibilityId("ButtonBlueSection").Click();
+            //Thread.Sleep(TimeSpan.FromSeconds(5));
 
+            int numberOfTestings = 5;
+            int actualTest = 0;
+
+            for (int i = 0; i < numberOfTestings; i++)
+            {
+                desktopSession.FindElementByAccessibilityId("ButtonRedSection").Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                desktopSession.FindElementByAccessibilityId("ButtonGreenSection").Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                desktopSession.FindElementByAccessibilityId("ButtonBlueSection").Click();
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                actualTest++;
+            }
 
             desktopSession.Quit();
             desktopSession = null;
+
+            ReportOfTesting(actualTest);
+            Console.ReadLine();
+
             //Console.ReadLine();
+        }
+
+        public static void ReportOfTesting(int numberOfTests)
+        {
+            Console.WriteLine("==========TEST-REPORT==========");
+            Console.WriteLine($"Test Executed: {numberOfTests}");
+            Console.WriteLine("==========END-OF-TEST==========");
         }
     }
 }
