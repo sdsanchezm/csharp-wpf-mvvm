@@ -19,8 +19,8 @@
                 <Button Height="40" Width="120" Content="+10" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="DarkRed" Foreground="WhiteSmoke"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,10,10" Grid.Row="2">
-                <Button Height="40" Width="120" Content="+6" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="DarkRed" Foreground="WhiteSmoke"/>
-                <Button Height="40" Width="120" Content="+10" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="DarkRed" Foreground="WhiteSmoke"/>
+                <Button Height="40" Width="120" Content="+16" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="DarkRed" Foreground="WhiteSmoke"/>
+                <Button Height="40" Width="120" Content="+17" Margin="5" HorizontalAlignment="Right" CommandParameter="{Binding ElementName=lstView,Path=SelectedItem}" Command="{Binding UserDeleteCommand}" Background="DarkRed" Foreground="WhiteSmoke"/>
             </StackPanel>
         </StackPanel>
     </Grid>

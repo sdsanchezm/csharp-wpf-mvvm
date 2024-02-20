@@ -75,9 +75,9 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Vertical" Margin="0,0,0,0" Background="Azure" Height="auto">
-                <Button Height="40" Width="120" Content="Blue" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="Black" Background="#0090FF" CommandParameter="{x:Static vmodel1:PageId.BluePage}"/>
-                <Button Height="40" Width="120" Content="Red" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="black" Background="#FF4444" CommandParameter="{x:Static vmodel1:PageId.RegPage}"/>
-                <Button Height="40" Width="120" Content="Green" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="Black" Background="#77AA77" CommandParameter="{x:Static vmodel1:PageId.GreenPage}"/>
+                <Button Height="40" Width="120" Content="Blue" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="Black" Background="#0090FF" CommandParameter="{x:Static vmodel1:PageId.BluePage}" AutomationProperties.AutomationId="ButtonBlueSection"/>
+                <Button Height="40" Width="120" Content="Red" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="black" Background="#FF4444" CommandParameter="{x:Static vmodel1:PageId.RegPage}" AutomationProperties.AutomationId="ButtonRedSection"/>
+                <Button Height="40" Width="120" Content="Green" Margin="5" HorizontalAlignment="Right" Command="{Binding UIChangePage}" Foreground="Black" Background="#77AA77" CommandParameter="{x:Static vmodel1:PageId.GreenPage}" AutomationProperties.AutomationId="ButtonGreenSection"/>
             </StackPanel>
 
             <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding}" Background="Beige" Width="660" Margin="10">
