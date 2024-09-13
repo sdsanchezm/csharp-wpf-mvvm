@@ -65,6 +65,7 @@ namespace PersonelTrackingProject.Views.EmployeeView
                 Salary = p.Salary,
                 Password = p.Password,
                 Address = p.Address,
+                ImagePath = p.ImagePath
             }).ToList();
             gridEmployee.ItemsSource = listEmployees;
         }
@@ -112,6 +113,14 @@ namespace PersonelTrackingProject.Views.EmployeeView
             cmbPosition.ItemsSource = positionsTemp;
             cmbDepartment.SelectedIndex = -1;
             gridEmployee.ItemsSource= listEmployees;
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            EmployeeDetailDto model = (EmployeeDetailDto)gridEmployee.SelectedItem;
+            EmployeePage page = new EmployeePage();
+            //page.model = model;
+            page.ShowDialog();
         }
     }
 }

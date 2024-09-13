@@ -46,7 +46,7 @@ namespace PersonelTrackingProject.Views.PositionView
         {
             if (txtPosition.Text.Trim().Length == 0)
             {
-                MessageBox.Show("No empty fields allowed.");
+                MessageBox.Show("No empty fields are allowed.");
             }
             else
             {
@@ -58,7 +58,7 @@ namespace PersonelTrackingProject.Views.PositionView
                     positionTemp.DepartmentId = (int)cmbDepartment.SelectedValue;
                     db.Positions.Update(positionTemp);
                     db.SaveChanges();
-                    MessageBox.Show("Position was updated successfully.");
+                    MessageBox.Show("The position was updated successfully.");
                     //this.Close();
                 }
             }

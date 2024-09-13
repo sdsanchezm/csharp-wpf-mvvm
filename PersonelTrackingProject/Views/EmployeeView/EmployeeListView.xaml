@@ -34,6 +34,7 @@
                 <DataGridTextColumn Header="Birthday" Width="*" Binding="{Binding Birthday}" />
                 <DataGridTextColumn Header="Address" Width="*" Binding="{Binding Address}" />
                 <DataGridTextColumn Header="Password" Width="*" Binding="{Binding Password}" />
+                <DataGridTextColumn Header="ImagePath" Width="*" Binding="{Binding ImagePath}" />
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.ColumnSpan="5" Margin="10,10,10,10">
@@ -63,7 +64,7 @@
             <Button Grid.Column="4" Grid.Row="1" Content="Clear" Name="btnClear" Margin="20,5,10,5" Click="btnClear_Click" />
         </Grid>
         <Button x:Name="btnAdd" Content="New" FontSize="14" Grid.Column="1" Grid.Row="2" Margin="40,15,40,5" Click="btnAdd_Click" />
-        <Button x:Name="btnUpdate" Content="Update" FontSize="14" Grid.Column="2" Grid.Row="2" Margin="40,15,40,5" />
+        <Button x:Name="btnUpdate" Content="Update" FontSize="14" Grid.Column="2" Grid.Row="2" Margin="40,15,40,5" Click="btnUpdate_Click" />
         <Button x:Name="btnDelete" Content="Delete" FontSize="14" Grid.Column="3" Grid.Row="2" Margin="40,15,40,5" />
     </Grid>
 
